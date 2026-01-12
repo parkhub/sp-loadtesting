@@ -1,0 +1,3 @@
+[submodule "k6-smartpass-egds"]
+	path = k6-smartpass-egds
+	url = git@github.com:parkhub/k6-smartpass-egds.git
