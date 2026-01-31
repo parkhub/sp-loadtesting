@@ -1,0 +1,48 @@
+{
+  "baseUrl": "https://api-stage.smartpass.com",
+  "auth": {
+    "username": "your-username",
+    "password": "your-password"
+  },
+  "testData": {
+    "productType": 0,
+    "listingId": "00000000-0000-0000-0000-000000000001",
+    "pricingId": "00000000-0000-0000-0000-000000000002",
+    "clientOrganizationKey": "00000000-0000-0000-0000-000000000003",
+    "lotId": "00000000-0000-0000-0000-000000000004",
+    "landmarkId": "00000000-0000-0000-0000-000000000005",
+    "accessCode": ""
+  },
+  "payment": {
+    "defaultAmount": 1500,
+    "currency": "USD",
+    "testToken": "tok_visa"
+  },
+  "productTypes": {
+    "eventPass": 0,
+    "seasonPass": 1
+  },
+  "scenarios": {
+    "baseline": {
+      "vus": 5,
+      "duration": "5m"
+    },
+    "spike": {
+      "startVUs": 5,
+      "peakVUs": 50,
+      "duration": "2m"
+    },
+    "stress": {
+      "stages": [
+        { "duration": "2m", "target": 10 },
+        { "duration": "5m", "target": 20 },
+        { "duration": "2m", "target": 0 }
+      ]
+    },
+    "concurrent": {
+      "vus": 20,
+      "iterations": 100,
+      "maxDuration": "5m"
+    }
+  }
+}
